@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .review {
+            background: #fff;
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .review h3 {
+            margin: 0;
+            padding: 0;
+        }
+        .review p {
+            margin: 5px 0;
+        }
+        .rating {
+            color: #f39c12;
+        }
+        .sort-options {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .sort-options select {
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Customer Reviews</h1>
+    </header>
+    <div class="container">
+        <div class="sort-options">
+            <label for="sort">Sort by:</label>
+            <select id="sort" onchange="sortReviews()">
+                <option value="rating">Rating</option>
+                <option value="date">Date</option>
+            </select>
+        </div>
+        <div id="reviews">
+            <div class="review" data-rating="5" data-date="2024-03-06">
+                <h3>Ravi Kumar</h3>
+                <p>Service: Excellent customer service and fast delivery.</p>
+                <p class="rating">Rating: ★★★★★</p>
+                <p>Review: The staff was very helpful and the delivery was prompt. Highly recommend!</p>
+                <p>Posted: 1 day ago</p>
+            </div>
+            <div class="review" data-rating="4" data-date="2024-02-28">
+                <h3>Priya Sharma</h3>
+                <p>Service: Great shopping experience.</p>
+                <p class="rating">Rating: ★★★★☆</p>
+                <p>Review: The store had a wide variety of products and the checkout process was smooth.</p>
+                <p>Posted: 1 week ago</p>
+            </div>
+            <div class="review" data-rating="3" data-date="2024-02-07">
+                <h3>Amit Verma</h3>
+                <p>Service: Average service.</p>
+                <p class="rating">Rating: ★★★☆☆</p>
+                <p>Review: The service was okay, but the delivery took longer than expected.</p>
+                <p>Posted: 1 month ago</p>
+            </div>
+            <div class="review" data-rating="5" data-date="2023-03-06">
+                <h3>Sunita Patel</h3>
+                <p>Service: Fantastic experience.</p>
+                <p class="rating">Rating: ★★★★★</p>
+                <p>Review: The staff was knowledgeable and helped me find exactly what I needed.</p>
+                <p>Posted: 1 year ago</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function sortReviews() {
+            const reviewsContainer = document.getElementById('reviews');
+            const reviews = Array.from(reviewsContainer.getElementsByClassName('review'));
+            const sortOption = document.getElementById('sort').value;
+
+            reviews.sort((a, b) => {
+                if (sortOption === 'rating') {
+                    return b.getAttribute('data-rating') - a.getAttribute('data-rating');
+                } else if (sortOption === 'date') {
+                    return new Date(b.getAttribute('data-date')) - new Date(a.getAttribute('data-date'));
+                }
+            });
+
+            reviewsContainer.innerHTML = '';
+            reviews.forEach(review => reviewsContainer.appendChild(review));
+        }
+    </script>
+</body>
+</html>
