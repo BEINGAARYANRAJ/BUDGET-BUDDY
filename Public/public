@@ -1,1 +1,112 @@
-a
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Buddy Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <div class="sidebar">
+        <h2 class="brand">BUDGET <span> BUDDY</span></h2>
+        
+        <div class="menu-item"><i class="material-icons">grid_view</i><a href="index.html"> Dashboard</a></div>
+        <div class="menu-item"><i class="material-icons">person</i><a href="customers.html">Customers</a></div>
+        
+        <div class="menu-item"><i class="material-icons">inventory</i> <a href="products.html">Products</a></div>
+        <div class="menu-item"><i class="material-icons">bar_chart</i><a href="reports.html"> Reports</a></div>
+        <div class="menu-item"><i class="material-icons">settings</i><a href="settings.html"> Settings</a></div>
+        
+        <div class="menu-item"><i class="material-icons">logout</i><a href="logout.html">Log out</a></div>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h2>Dashboard</h2>
+            
+            <div class="profile-container">
+                
+                <div class="profile">
+                    <img src="images.jpg" alt="Profile Picture">
+                    <p>Admin</p>
+                </div>
+            </div>
+        </header>
+        
+        <section class="cards">
+            <div class="card">
+                <i class="material-icons">trending_up</i>
+                <div>
+                    <h3>Income</h3>
+                    <p>₹21,17,052</p>
+                    <span>Last 24 Hours • 80%</span>
+                </div>
+            </div>
+            <div class="card">
+                <i class="material-icons">trending_down</i>
+                <div>
+                    <h3>Expenses</h3>
+                    <p>₹21,17,052</p>
+                    <span>Last 24 Hours • 80%</span>
+                </div>
+            </div>
+            <div class="card">
+                <i class="material-icons">shopping_cart</i>
+                <div>
+                    <h3>Total Sales</h3>
+                    <p>₹21,17,052</p>
+                    <span>Last 24 Hours • 80%</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="orders">
+            <h3>Recent Orders</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Product Number</th>
+                        <th>Payments</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mini USB</td>
+                        <td>4000</td>
+                        <td>Due</td>
+                        <td class="pending">Pending</td>
+                        <td><a href="#" style="color:blue;">Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Wireless Mouse</td>
+                        <td>3201</td>
+                        <td>Paid</td>
+                        <td class="completed">Completed</td>
+                        <td><a href="#" style="color:blue;">Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Bluetooth Speaker</td>
+                        <td>2587</td>
+                        <td>Due</td>
+                        <td class="pending">Pending</td>
+                        <td><a href="#" style="color:blue;">Details</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>Keyboard</td>
+                        <td>2587</td>
+                        <td>Due</td>
+                        <td class="completed">Completed</td>
+                        <td><a href="#" style="color:blue;">Details</a></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    </div>
+</body>
+</html>
