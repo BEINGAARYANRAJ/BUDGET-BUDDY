@@ -8,7 +8,7 @@ import Settings from './components/Settings';
 import Login from './components/Login';
 import Logout from './components/Logout';
 import Sidebar from './components/Sidebar';
-import './styles/main.css';
+import './styles/Style.css';
 
 function App() {
   return (
