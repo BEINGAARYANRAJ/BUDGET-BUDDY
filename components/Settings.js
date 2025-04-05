@@ -1,92 +1,100 @@
-import React, { useState } from 'react';
-import './Settings.css';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import '../styles/settings.css';
 
 function Settings() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [location, setLocation] = useState('');
-  const [language, setLanguage] = useState('en');
-  const [notifications, setNotifications] = useState(false);
+  const [formData, setFormData] = useState({
+    username: '',
+    password: '',
+    location: '',
+    language: 'english',
+    notifications: false
+  });
 
-  const handleSave = (e) => {
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value
+    }));
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const settings = {
-      username,
-      password,
-      location,
-      language,
-      notifications,
-    };
-    console.log('Settings saved:', settings);
-    alert('Settings have been saved successfully!');
+    console.log('Settings saved:', formData);
+    alert('Settings saved successfully!');
   };
 
   return (
-    <div className="container">
+    <div className="settings-container">
       <h1>Settings</h1>
-      <form onSubmit={handleSave}>
-        <div className="setting">
+      
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
           <label htmlFor="username">Username</label>
           <input
             type="text"
             id="username"
             name="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={formData.username}
+            onChange={handleChange}
           />
         </div>
-        <div className="setting">
+
+        <div className="form-group">
           <label htmlFor="password">Password</label>
           <input
             type="password"
             id="password"
             name="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={formData.password}
+            onChange={handleChange}
           />
         </div>
-        <div className="setting">
+
+        <div className="form-group">
           <label htmlFor="location">Location</label>
           <input
             type="text"
             id="location"
             name="location"
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
+            value={formData.location}
+            onChange={handleChange}
           />
         </div>
-        <div className="setting">
+
+        <div className="form-group">
           <label htmlFor="language">Language</label>
           <select
             id="language"
             name="language"
-            value={language}
-            onChange={(e) => setLanguage(e.target.value)}
+            value={formData.language}
+            onChange={handleChange}
           >
-            <option value="en">English</option>
-            <option value="es">Spanish</option>
-            <option value="fr">French</option>
+            <option value="english">English</option>
+            <option value="spanish">Spanish</option>
+            <option value="french">French</option>
+            <option value="german">German</option>
           </select>
         </div>
-        <div className="setting">
-          <label>
-            <input
-              type="checkbox"
-              name="notifications"
-              id="notifications"
-              checked={notifications}
-              onChange={(e) => setNotifications(e.target.checked)}
-            />
-            Enable Notifications
-          </label>
+
+        <div className="form-group checkbox-group">
+          <input
+            type="checkbox"
+            id="notifications"
+            name="notifications"
+            checked={formData.notifications}
+            onChange={handleChange}
+          />
+          <label htmlFor="notifications">Enable Notifications</label>
         </div>
-        <div className="setting">
-          <button type="submit">Save Settings</button>
-        </div>
+
+        <button type="submit" className="save-btn">Save Settings</button>
       </form>
-      <div className="links">
-        <a href="/create_account.html">Create New Account</a>
-        <a href="/forgot_password.html">Forgot Password?</a>
+
+      <div className="settings-links">
+        <Link to="/create-account">Create New Account</Link>
+        <Link to="/forgot-password">Forgot Password?</Link>
       </div>
     </div>
   );
