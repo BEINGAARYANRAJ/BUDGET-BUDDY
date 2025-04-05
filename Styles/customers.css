@@ -1,0 +1,50 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.review {
+  background: #fff;
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.review h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.review p {
+  margin: 5px 0;
+}
+
+.rating {
+  color: #f39c12;
+}
+
+.sort-options {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.sort-options select {
+  padding: 10px;
+  font-size: 16px;
+}
