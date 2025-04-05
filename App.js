@@ -1,39 +1,23 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Dashboard from './components/Dashboard';
-import Customers from './components/Customers';
-import Products from './components/Products';
-import Reports from './components/Reports';
-import Settings from './components/Settings';
-import Login from './components/Login';
-import Logout from './components/Logout';
-import Sidebar from './components/Sidebar';
-import './Styles/Style.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Dashboard from './pages/Dashboard';
+import Login from './pages/Login';
+import Logout from './pages/Logout';
+import Customers from './pages/Customers';
+import Products from './pages/Products';
+import Reports from './pages/Reports';
+import Settings from './pages/Settings';
 
 function App() {
   return (
     <Router>
       <Routes>
-        {}
-        <Route path="/login" element={<Login />} />
-        
-        {}
-        <Route path="/*" element={
-          <div className="app-container">
-            <Sidebar />
-            <div className="main-content">
-              <Routes>
-                <Route path="/dashboard" element={<Dashboard />} />
-                <Route path="/customers" element={<Customers />} />
-                <Route path="/products" element={<Products />} />
-                <Route path="/reports" element={<Reports />} />
-                <Route path="/settings" element={<Settings />} />
-                <Route path="/logout" element={<Logout />} />
-                <Route path="/" element={<Login />} />
-              </Routes>
-            </div>
-          </div>
-        } />
+        <Route path="/" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/customers" element={<Customers />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/reports" element={<Reports />} />
+        <Route path="/settings" element={<Settings />} />
+        <Route path="/logout" element={<Logout />} />
       </Routes>
     </Router>
   );
