@@ -1,43 +1,59 @@
-:\Users\being\OneDrive\Desktop\Class Project\budget\src\components\Products.css */
-.products-container {
-  padding: 20px;
+body {
   font-family: Arial, sans-serif;
-  text-align: center;
-}
-
-h1 {
-  color: #333;
-  margin-bottom: 20px;
-}
-
-.products-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 0 auto;
-}
-
-.products-table th,
-.products-table td {
-  padding: 10px;
-  border: 1px solid #ddd;
-  text-align: left;
-}
-
-.products-table th {
+  margin: 0;
+  padding: 0;
   background-color: #f4f4f4;
-  color: #333;
 }
-
-.products-table tr:nth-child(even) {
-  background-color: #f9f9f9;
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
 }
-
-.in-stock {
+header {
+  background: #333;
+  color: #fff;
+  padding-top: 30px;
+  min-height: 70px;
+  border-bottom: #77aaff 3px solid;
+}
+header a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+header ul {
+  padding: 0;
+  list-style: none;
+}
+header li {
+  float: left;
+  display: inline;
+  padding: 0 20px 0 20px;
+}
+.product {
+  background: #fff;
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  position: relative;
+}
+.product h2 {
+  margin: 0;
+  padding: 0;
+}
+.availability {
   color: green;
-  font-weight: bold;
 }
-
-.out-of-stock {
+.unavailable {
   color: red;
-  font-weight: bold;
+}
+.add-to-cart {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
 }
