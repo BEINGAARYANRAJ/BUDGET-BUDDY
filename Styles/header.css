@@ -1,1 +1,41 @@
-
+/* Header container */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  /* Profile section */
+  .profile-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  /* Profile image styling */
+  .profile-img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #2f3e46;
+  }
+  
+  /* Admin text */
+  .profile p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #333;
+  }
