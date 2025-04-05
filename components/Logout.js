@@ -1,29 +1,20 @@
 import React from 'react';
-import './Logout.css';
+import { useNavigate } from 'react-router-dom';
+import '../styles/logout.css';
 
 function Logout() {
-  const handleLogout = () => {
-    // Clear user session or perform logout logic
-    alert('You have been logged out successfully.');
-    window.location.href = '/login.html'; // Redirect to the login page
+  const navigate = useNavigate();
+
+  const logout = () => {
+    alert('You have been logged out.');
+    navigate('/');
   };
 
-  return (
-    <div className="logout-container">
-      <h1>Logout</h1>
-      <p>Are you sure you want to log out?</p>
-      <div className="logout-buttons">
-        <button className="button confirm" onClick={handleLogout}>
-          Yes, Log Out
-        </button>
-        <button
-          className="button cancel"
-          onClick={() => (window.location.href = '/index.html')}
-        >
-          Cancel
-        </button>
-      </div>
-    </div>
+  return React.createElement('div', { className: 'logout-container' },
+    React.createElement('div', { className: 'container' },
+      React.createElement('h1', null, 'Are you sure you want to log out?'),
+      React.createElement('button', { onClick: logout }, 'Logout')
+    )
   );
 }
 
